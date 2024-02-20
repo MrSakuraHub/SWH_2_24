@@ -1,7 +1,10 @@
 import React from 'react'
 import '../globals.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function ClientMarketplace() {
+	const navigate = useNavigate()
+
 	const dummyTaskList = [
 		{
 			title: 'Archive Task',
@@ -55,6 +58,7 @@ export default function ClientMarketplace() {
 								padding: '1rem',
 								minWidth: '90%',
 							}}
+							onClick={() => navigate('/modal')}
 						>
 							<h3>
 								{item.title} - {item.key} ({item.status})
@@ -83,26 +87,6 @@ export default function ClientMarketplace() {
 					))}
 				</div>
 			</div>
-
-			{/* <div style={{ display: 'flex', flexDirection: 'row' }}>
-				<div style={{ display: 'flex', flexDirection: 'column' }}>
-					{dummyTaskList.map((item) => (
-						<>
-							<h3>
-								{item.title} - {item.key} ({item.status})
-							</h3>
-							<p>{item.description}</p>
-						</>
-					))}
-				</div>
-				<div style={{ display: 'flex', flexDirection: 'column' }}>
-					{dummyBAList.map((item) => (
-						<h3 key={item.key}>
-							{item.title} - {item.key}
-						</h3>
-					))}
-				</div>
-			</div> */}
 		</div>
 	)
 }

@@ -7,6 +7,7 @@ import Header from './components/Header'
 import ProtectedRoute from './ProtectedRoute'
 import BAMarketplace from './pages/BAMarketplace'
 import Unauthorised from './pages/Unauthorised'
+import TaskViewModal from './components/TaskViewModal'
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 					element={<ProtectedRoute allowedUsers={['ba', 'client']} />}
 				>
 					<Route path="/dashboard" element={<Dashboard />} />
+					<Route path="/modal" element={<TaskViewModal />} />
 				</Route>
 
 				<Route element={<ProtectedRoute allowedUsers={['client']} />}>

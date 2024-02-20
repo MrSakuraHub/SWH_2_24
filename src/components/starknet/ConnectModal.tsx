@@ -4,7 +4,7 @@ import React from 'react'
 import { Button } from '../ui/Button'
 import Dialog from '../ui/Dialog'
 
-export default function ConnectModal() {
+export default function ConnectTaskViewModal() {
 	const { connect, connectors } = useConnect()
 
 	return (

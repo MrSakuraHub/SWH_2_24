@@ -1,14 +1,29 @@
 import React from 'react'
 import { Button } from '../components/ui/Button'
+import { useNavigate } from 'react-router-dom'
 
 export default function BAMarketplace() {
-	const dummyBAList = [
+	const navigate = useNavigate()
+
+	const dummyTaskList = [
 		{
-			title: 'Business Analyst',
+			title: 'Archive Task',
+			description: 'How to render list in React?',
+			status: 'Solving',
 			key: 1,
 		},
-		{ title: 'Business Analyst', key: 2 },
-		{ title: 'Business Analyst', key: 3 },
+		{
+			title: 'Archive Task',
+			description: 'Do you like JS?',
+			status: 'Negotating',
+			key: 2,
+		},
+		{
+			title: 'Archive Task',
+			description: 'Do you know CSS?',
+			status: 'Solving',
+			key: 3,
+		},
 	]
 
 	return (
@@ -24,7 +39,7 @@ export default function BAMarketplace() {
 			</div>
 
 			<div style={{ position: 'absolute', left: 0, top: 100 }}>
-				{dummyBAList.map((item) => (
+				{dummyTaskList.map((item) => (
 					<Button
 						key={item.key}
 						style={{
@@ -32,9 +47,10 @@ export default function BAMarketplace() {
 							margin: '1rem',
 							padding: '1rem',
 						}}
+						onClick={() => navigate('/modal')}
 					>
 						<h3>
-							{item.title} - {item.key}
+							{item.title} - {item.key} ({item.status})
 						</h3>
 					</Button>
 				))}
