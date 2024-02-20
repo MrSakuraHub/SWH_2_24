@@ -1,18 +1,23 @@
 import React from 'react'
-import { useAccount, useBalance } from '@starknet-react/core'
+// import { useAccount, useBalance } from '@starknet-react/core'
 import { Button } from '../components/ui/Button'
 import { useNavigate } from 'react-router-dom'
 
 export default function Dashboard() {
-	const { address } = useAccount()
+	// const { address } = useAccount()
 	const navigate = useNavigate()
-	const { isLoading, isError, error, data } = useBalance({
-		address,
-		watch: false,
-	})
+	// const { isLoading, isError, error, data } = useBalance({
+	// 	address,
+	// 	watch: false,
+	// })
 
-	if (isLoading) return <div>Loading ...</div>
-	if (isError || !data) return <div>{error?.message}</div>
+	// if (isLoading) return <div>Loading ...</div>
+	// if (isError || !data) return <div>{error?.message}</div>
+
+	const buttonRoute =
+		localStorage.getItem('user_type') === 'client'
+			? '/marketplace/client'
+			: '/marketplace/ba'
 
 	return (
 		<div>
@@ -67,7 +72,7 @@ export default function Dashboard() {
 
 				<br></br>
 
-				<div
+				{/* <div
 					className="fixed left-0 left-0 justify-between flex flex-row px-4 p-2"
 					style={{
 						marginTop: 100,
@@ -77,12 +82,12 @@ export default function Dashboard() {
 						User Balance: {data.value.toString()} {}
 						{data.symbol}
 					</h1>
-				</div>
+				</div> */}
 
 				<>
 					<a>
 						<Button
-							onClick={() => navigate('/marketplace')}
+							onClick={() => navigate(buttonRoute)}
 							style={{
 								left: 0,
 								position: 'absolute',

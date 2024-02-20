@@ -12,7 +12,7 @@ export default function Header() {
 		if (address) {
 			localStorage.setItem('user_address', address)
 			navigate('/dashboard')
-		} else navigate('/')
+		}
 	}, [address])
 
 	return (
@@ -27,6 +27,7 @@ export default function Header() {
 						onClick={() => {
 							localStorage.clear()
 							disconnect()
+							navigate('/')
 						}}
 						className="cursor-pointer text-black/50"
 					>
