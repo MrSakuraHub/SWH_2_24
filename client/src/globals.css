@@ -198,3 +198,24 @@ form > div {
 .hide {
 	display: none;
 }
+
+.success-message {
+	font-size: 12px;
+	font-weight: 500;
+	color: #00c853;
+	margin-top: 4px;
+}
+
+.error-message {
+	font-size: 12px;
+	font-weight: 500;
+	color: red;
+	margin-top: 4px;
+}
+
+.info-message {
+	font-size: 12px;
+	font-weight: 400;
+	color: #737373;
+	margin: 1px;
+}
